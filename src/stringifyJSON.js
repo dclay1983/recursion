@@ -2,7 +2,12 @@
 // var stringifyJSON = JSON.stringify;
 
 // but you don't so you're going to write it from scratch:
-
+function getLinebreak(){
+  if(navigator.userAgent.indexOf("Windows") != -1){
+    return "\r\n";
+  }
+  return "\n";
+}
 var stringifyJSON = function(obj) {
-  // your code goes here
+  
 };
