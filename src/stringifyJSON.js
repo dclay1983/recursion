@@ -14,11 +14,12 @@ var stringifyJSON = function(obj) {
     return typeof obj === "string" ? `"${obj}"` : `${obj}`
   }
   var stringifyArray = function (obj) {
-    var result = "";
+    var string = "";
     obj.forEach( function (element) {
-      result += `${stringifyJSON(element)},`;
+      var result = stringifyJSON(element);
+      string += result === undefined ? `null,` : `${result},`;
     })
-    return result;
+    return string;
   }
   var stringifyObject = function (obj) {
     var string = "";
